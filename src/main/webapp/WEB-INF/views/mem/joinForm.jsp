@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>회원가입 폼</title>
+<title>회원가입 폼!</title>
 </head>
 <body>
 <h3>회원가입</h3>
