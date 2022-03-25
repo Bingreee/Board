@@ -8,4 +8,8 @@ import member.board.dto.MemDto;
 public interface MemDao {
 
 	int insertMem(MemDto dto);
+	String idCheck(String id);
+	MemDto login(MemDto dto);
+	int updateMem(MemDto dto);
+	int deleteMem(String id);
 }

@@ -8,6 +8,21 @@
 	insert into mem values(#{id},#{password},#{name},#{birth},#{address})
 </insert>
 
+<select id="idCheck" parameterType="String" resultType="String">
+	select id from mem where id = #{id}
+</select>
+
+<select id="login" parameterType="member.board.dto.MemDto" resultType="member.board.dto.MemDto">
+	select * from mem where id = #{id} and password = #{password}
+</select>
+
+<update parameterType="member.board.dto.MemDto" id="updateMem"> 
+	update mem set password=#{password}, name=#{name}, birth = #{birth},address=#{address} where id=#{id} 
+</update>
+
+<delete parameterType="String" id="deleteMem"> 
+	delete from mem where id = #{id}
+</delete>
 
 
 </mapper>
