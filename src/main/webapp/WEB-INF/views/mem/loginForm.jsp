@@ -12,11 +12,11 @@
 <form:errors element="div"/>
 <table border="1" cellpadding="0" cellspacing="0">				
 	<tr>
-		<td bgcolor="orange" >아이디</td>
+		<td bgcolor="#d3d3d3" >아이디</td>
 		<td><input name="id" type="text" size="10"></td>
 	</tr>
 	<tr>
-		<td bgcolor="orange" >비밀번호</td>
+		<td bgcolor="#d3d3d3" >비밀번호</td>
 		<td><input name="password" type="password" size="10"></td>
 	</tr>
 	<tr>

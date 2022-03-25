@@ -4,23 +4,23 @@
 <head>
 <title>글쓰기</title>
 <style>
-	.orange{background-color: orange;}
+	.lightgray{background-color: #d3d3d3;}
 	table{border-collapse : collapse;}
 </style>
 </head>
 <body>
-<form method="post" id="writeform">
+<form method="post" id="writeForm">
 	<table border="1">
 		<tr>
-			<td class="orange">제목</td>
+			<td class="lightgray">제목</td>
 			<td><input name="title"/></td>
 		</tr>
 		<tr>
-			<td class="orange">작성자</td>
+			<td class="lightgray">작성자</td>
 			<td><input name="id" value="${user.id}" readonly></td>
 		</tr>
 		<tr>
-			<td class="orange">내용</td>
+			<td class="lightgray">내용</td>
 			<td><textarea name="content" cols="40" rows="10"></textarea></td>
 		</tr>
 		<tr>

@@ -21,7 +21,7 @@ table {
 }
 
 th {border: 1px solid black;
-	background-color: orange;
+	background-color: white;
 	width: 150px;
 }
 td{border: 1px solid black;}
