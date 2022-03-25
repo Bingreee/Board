@@ -95,7 +95,7 @@ public class MemController {
 	@GetMapping("/delete/wrongpw")
 	public String deleteformError(Model m) {
 		m.addAttribute("error", "비밀번호 틀림");
-		return "mem/deleteform";
+		return "mem/deleteForm";
 	}
 	@DeleteMapping("/delete")
 	public String delete(String formpw, @ModelAttribute("user") MemDto dto, SessionStatus status) {
