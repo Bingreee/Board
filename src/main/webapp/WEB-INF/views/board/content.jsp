@@ -21,6 +21,21 @@
 	<a href="../list">목록 이동</a> 
 	</td></tr>
 </table>
+
+<!--  cList -->
+<div>
+	<c:forEach items="${cList}" var="comm">
+		<div>${comm.id} / <fmt:formatDate value="${comm.regdate }" dateStyle="short"/></div>
+		<div>${comm.content} 
+		<c:if test="${comm.id == user.id }">
+		<button class="dbtn" id="${comm.cno}">삭제</button>
+		</c:if>
+		</div>
+		<hr>
+	</c:forEach>
+	<input name="content" id="content"><button id="add">등록</button>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 	$(function(){
@@ -31,6 +46,45 @@
 				location.href="/board/list";
 			})
 			return false;
+		})//click
+	})//ready
+
+</script>
+
+
+
+<script>
+	$(function(){
+		$("a[id]").click(function(){
+			let no = $(this).attr("id");
+			$.ajax({url:"/board/delete", data:"no="+no, method:"delete"}
+			).done(function(){
+				location.href="/board/list";
+			})
+			return false;
+		})//click
+		
+		$("#add").click(function(){
+			let id = '${user.id}';
+			let content = $("#content").val();
+			let no = ${dto.no};
+			
+			$.ajax({url:"/comm/insert",
+					data:"no="+no+"&id="+id+"&content="+content,
+					method:"get"
+			}).done(function(){
+					location.reload();		
+				});
+			
+		})//click
+		$(".dbtn").click(function(){
+			let cno = $(this).attr("id");
+			$.ajax({url:"/comm/delete/"+cno,
+				method:"get"
+		}).done(function(){
+				location.reload();		
+			});
+			
 		})//click
 	})//ready
 

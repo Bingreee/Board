@@ -41,4 +41,21 @@ public class BoardService {
 	public int deleteBoard(int no) {
 		return dao.deleteBoard(no);
 	}
+	
+	public List<BoardDto> boardListSearch(int searchn, String search,int start, int end){
+		Map<String,Object> m = new HashMap<String, Object>();
+		m.put("searchn",searchn);
+		m.put("search", search);
+		m.put("start", start);
+		m.put("end", end);
+		
+		return dao.boardListSearch(m);
+	}
+	public int countSearch(int searchn, String search) {
+		System.out.println(searchn+search);
+		Map<String,Object> m = new HashMap<String, Object>();
+		m.put("searchn",searchn);
+		m.put("search", search);
+		return dao.countSearch(m);
+	}
 }
